@@ -59,10 +59,15 @@ uint8_t const width = 16U;
  * Students should create or add any functions or classes they may need.
  */
 shared_ptr<uint16_t> rpn_calc(command const cmd, uint16_t const value = 0) {
-    // this is example code which returns a (smart shared) pointer to 16-bit value
-    uint16_t val = 0b1001100100000011;
-    shared_ptr<uint16_t> result = make_shared<uint16_t>(val);
-    return result;
+    
+     shared_ptr<uint16_t> result;
+
+    switch (cmd)
+    {
+    case cmd_enter:
+        my_stack.push(make_shared<uint16_t>(value));
+        result = my_stack.top();
+        break;
 }
 
 /*
