@@ -82,6 +82,12 @@ shared_ptr<uint16_t> rpn_calc(command const cmd, uint16_t const value = 0) {
         result = nullptr;
         break;
     }
+         else
+        {
+            result = nullptr; 
+        }
+        break;
+
 }
 
 /*
