@@ -136,6 +136,23 @@ shared_ptr<uint16_t> rpn_calc(command const cmd, uint16_t const value = 0) {
             result = nullptr;
         }
         break;
+        case cmd_or:
+        if (my_stack.size() >= 2)
+        {
+            uint16_t top_value2 = *my_stack.top();
+            my_stack.pop();
+            uint16_t top_value1 = *my_stack.top();
+            my_stack.pop();
+            uint16_t result_value = top_value1 | top_value2;
+            my_stack.push(make_shared<uint16_t>(result_value));
+            result = my_stack.top();
+        }
+        else
+        {
+            result = nullptr;
+        }
+        break;
+        
 }
 
 /*
