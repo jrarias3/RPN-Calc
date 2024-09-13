@@ -38,8 +38,19 @@ enum command : uint16_t {
     cmd_and,
     cmd_add,
 };
-vector<string> command_name = {"cmd_enter",       "cmd_clear", "cmd_pop", "cmd_top", "cmd_left_shift",
-                               "cmd_right_shift", "cmd_or",    "cmd_and", "cmd_add"};
+vector<string> command_name;
+void init_command_name()
+{
+    command_name.push_back("cmd_enter");
+    command_name.push_back("cmd_clear");
+    command_name.push_back("cmd_pop");
+    command_name.push_back("cmd_top");
+    command_name.push_back("cmd_left_shift");
+    command_name.push_back("cmd_right_shift");
+    command_name.push_back("cmd_or");
+    command_name.push_back("cmd_and");
+    command_name.push_back("cmd_add");
+}
 uint8_t const width = 16U;
 
 /*
