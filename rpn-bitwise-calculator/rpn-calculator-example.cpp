@@ -367,6 +367,7 @@ bool test() {
 }
 
 int main() {
+    init_command_name();
     if (!test()) {
         return -1;
     }
