@@ -87,7 +87,36 @@ shared_ptr<uint16_t> rpn_calc(command const cmd, uint16_t const value = 0) {
             result = nullptr; 
         }
         break;
+    case cmd_top:
+        if (my_stack.empty())
+        {
+            result = nullptr;
+        }
+        else
+        {
+            result = my_stack.top();
+        }
+        break;
 
+    case cmd_left_shift:
+        if (value == 0)
+        {
+            result = nullptr;
+            break;
+        }
+        if (!my_stack.empty())
+        {
+            uint16_t top_value = *my_stack.top();
+            my_stack.pop();
+            uint16_t shifted_value = top_value << 1;
+            my_stack.push(make_shared<uint16_t>(shifted_value));
+            result = my_stack.top();
+        }
+        else
+        {
+            result = nullptr;
+        }
+        break;
 }
 
 /*
